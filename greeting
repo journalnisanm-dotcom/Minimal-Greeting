@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetings</title>
+
+    <style>
+
+
+        body{
+            font-variant-caps:quicksand;
+
+
+        }
+
+        .widget {
+            padding: 5px 5px ;
+            color: #000000;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction: column;
+            max-width: 95%;
+            margin: auto;
+
+
+        }
+
+           
+        .greet{
+            font-size: 3em;
+        }
+
+
+        .time {
+            display: inline-block;
+            min-width: 20px;
+        }
+
+        .colon {
+            font-size: 1em;
+            display: inline-block;
+        }
+
+     
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+
+<div class="container>">
+    <div class="widget">
+
+            <div class="greet" id="greet"></div>
+
+    </div>
+</div>
+        
+
+
+
+<script>
+
+function dispalyGreetings(today){
+        hrs = today.getHours();
+        name=""
+        if (hrs < 12)
+            greet = 'Good Morning  '+"Nisa";
+        else if (hrs >= 12 && hrs <= 17)
+            greet = 'Good Afternoon '+"Nisa";
+        else if (hrs >= 17 && hrs <= 24)
+            greet = 'Good Evening  '+"Nisa";
+        document.getElementById('greet').innerHTML = greet;
+
+    }
+
+    function dispalyDate(today) {  
+       
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+   
+
+    }
+
+
+  
+
+    function twelveHour(hour) {
+        if (hour > 12) {
+            return hour -= 12
+        } else if (hour === 0) {
+            return hour = 12;
+        } else {
+            return hour
+        }
+    }
+    function padZeros(num) {
+        if (num < 10) {
+            num = '0' + num
+        };
+        return num;
+    }
+
+    function dispalyWidget() {
+        var today = new Date();
+        dispalyGreetings(today);
+        dispalyDate(today);
+        dispalyClock(today);
+        setTimeout(dispalyWidget, 500);
+    }
+
+    dispalyWidget()
+
+</script>
+
+</body>
+</html>
